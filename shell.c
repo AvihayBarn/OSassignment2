@@ -21,6 +21,6 @@ int main()
         {
             printf("no command");
         }
-        printf("%s\n",command)
+        printf("%s\n",command);
     }
 }
