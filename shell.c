@@ -14,11 +14,13 @@ int main()
         }
         else if(strcmp("COPY",command))
         {
+            
             printf("COPY\n");
         }
         else
         {
             printf("no command");
         }
+        printf("%s\n",command)
     }
 }
