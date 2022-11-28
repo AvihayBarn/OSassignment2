@@ -22,9 +22,16 @@ void Dir()
     struct dirent *currDirContent;
     DIR *currDir = opendir ("./");
 
-    while ((currDirContent = readdir(currDir)) != NULL) {
-            printf ("[%s]\n", currDirContent->d_name);
-        } 
+    while ((currDirContent = readdir(currDir)) != NULL)
+    {
+        if(!currDirContent->d_name == '.')
+        {
+            printf ("%s\n", currDirContent->d_name);
+        }
+            
+    } 
+    
+    closrdir(currDir);
 
 }
 
@@ -52,6 +59,5 @@ int main()
         {
             printf("no command\n");
         }
-        printf("%s\n",command);
     }
 }
