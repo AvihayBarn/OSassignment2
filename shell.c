@@ -57,7 +57,8 @@ int main()
         }
         else
         {
-            printf("no command\n");
+            
+            printf("%s\n",command);
         }
     }
 }
