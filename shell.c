@@ -24,11 +24,11 @@ void Dir()
 
     while ((currDirContent = readdir(currDir)) != NULL)
     {
-        if(!currDirContent->d_name == '.')
-        {
-            printf ("%s\n", currDirContent->d_name);
-        }
-            
+        
+        if(currDirContent->d_name == '.') continue;
+
+        printf ("%s\n", currDirContent->d_name);
+        
     } 
     
     closedir(currDir);
