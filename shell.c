@@ -24,8 +24,8 @@ void Dir()
 
     while ((currDirContent = readdir(currDir)) != NULL)
     {
-        
-        if(currDirContent->d_name == '.') continue;
+
+        if(currDirContent->d_name[0] == '.') continue;
 
         printf ("%s\n", currDirContent->d_name);
         
