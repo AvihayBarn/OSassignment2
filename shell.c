@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
+#include <dirnet.h>
 
 bool IsEqual(char string1[] , char string2[])
 {
@@ -15,6 +16,22 @@ bool IsEqual(char string1[] , char string2[])
 }
 
 
+
+void Dir()
+{
+    struct dirent *currDirContent;
+    DIR *currDir = opendir ("./");
+
+    while ((currDirContent = readdir(currDir)) != NULL) {
+            printf ("[%s]\n", currDirContent->d_name);
+        } 
+
+}
+
+
+
+
+
 int main()
 {
     while(1)
@@ -24,7 +41,7 @@ int main()
         scanf("%s",command);
         if(IsEqual("DIR",command))
         {
-            printf("DIR\n");
+            Dir();
         }
         else if(IsEqual("COPY",command))
         {
@@ -33,7 +50,7 @@ int main()
         }
         else
         {
-            printf("no command");
+            printf("no command\n");
         }
         printf("%s\n",command);
     }
