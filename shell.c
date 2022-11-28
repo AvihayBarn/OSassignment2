@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
-#include <dirnet.h>
+#include <dirent.h>
 
 bool IsEqual(char string1[] , char string2[])
 {
