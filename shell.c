@@ -31,7 +31,7 @@ void Dir()
             
     } 
     
-    closrdir(currDir);
+    closedir(currDir);
 
 }
 
