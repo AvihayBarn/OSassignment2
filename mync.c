@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 // uncludes for the server and client
 #include <stdio.h>
 #include <netdb.h>
@@ -31,11 +32,12 @@ void funcclient(int y);
 int main(int argc, char* argv[]) {
     
     if (strcmp(argv[1],"nc")==0){
-        if (argc != 4)
-    {   
+        if (argc != 4){
+       
         printf("its need to be in the formet ./mync nc <ip> <port>");
-        exit(1);
-    }
+        exit(1);}
+        
+        
         char * IP = argv[2];
         client(IP,argv[3]);}
     
@@ -70,7 +72,7 @@ int main(int argc, char* argv[]) {
  
     // assign IP, PORT
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    servaddr.sin_addr.s_addr = inet_addr(ip);
     servaddr.sin_port = htons(port);
  
     // connect the client socket to server socket
@@ -161,24 +163,17 @@ int main(int argc, char* argv[]) {
 
     // Function designed for chat between client and server.
 void funcserver(int connfd){
-    char * fileout;
-    fileout = "outputfile";
-    int fp = open(fileout, O_CREAT | O_WRONLY | O_TRUNC, 0644);
-    // -1 its mean the file dont opneing
-    if (fp == -1) {
-        fprintf(stderr, "%s\n", "file dont opening");
-        exit(1);
-    }
     char buff[MAX];
-    unsigned int x = 0;
     // infinite loop for chat
     for (;;) {
         bzero(buff, MAX);
         // read the message from client and copy it in buffer
         int x = read(connfd, buff, sizeof(buff));
-        if (write(fileout, buff, x) != x) {
-            fprintf(stderr, "%s\n", "cant write to the file");
-            exit(1);
-        }
+        printf("%s",buff);
+  
+    
+        
+
     }
+    
 }
