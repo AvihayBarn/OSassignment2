@@ -206,7 +206,7 @@ int main()
               {
 
 
-                 args[args_count][count] = tok2;
+                 args[args_count][count] = pipe_finder;
 
                  count++;
 
