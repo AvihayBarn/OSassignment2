@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX 1024
 
 //declerison on the functions
 int creat_file(char* x);
@@ -41,12 +42,14 @@ int creat_file(char* fileout){
 }
 
 int wriht_to_file(int p){
-    char buffer[1024] = {0};
+    char buffer[MAX] = {0};
     unsigned int readf = 0;
+    int s;
     // read - read 1024 bytes to the buffer from stdin(what we wriht in the terminel)
     while((readf = read(STDIN_FILENO, buffer, 1024)) != 0) {
         //write = wriht readf bytes from the buffer to p file
-        if (write(p, buffer, readf) != readf) {
+        s = write(p, buffer, readf);
+        if (s != readf) {
             fprintf(stderr, "%s\n", "cant write to the file");
             exit(1);
         }
