@@ -202,7 +202,7 @@ int main()
           while(pipe_finder != NULL) 
           {
 
-             if(strcmp(tok2, "|") != 0)
+             if(strcmp(pipe_finder, "|") != 0)
               {
 
 
@@ -239,5 +239,5 @@ int main()
 
 
     return 0;
-    
+
 }
