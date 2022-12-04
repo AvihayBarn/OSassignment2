@@ -92,11 +92,11 @@ void ExecuteCommandS(char *arguments[1000][1000]) {
     {
         if(arguments[0][1] != NULL && arguments[0][2] != NULL && arguments[0][3] == NULL )
         {
-             Copy();
+             //Copy();
         }
         else
         {
-            printf("Usage")
+            printf("Usage");
         }
        
     }   
