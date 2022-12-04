@@ -74,6 +74,33 @@ void Copy(char *src , char *dest)
 
 void ExecuteCommandS(char *arguments[1000][1000]) {
 
+    for(int i=0 ; i<args_count ; i++)
+    {
+        
+        int j=0;
+        while(arguments[i][j] != NULL)
+        {
+            printf("%s\t",arguments[i][j]);
+        }
+        printf("\n");
+    }
+    if(args_count == 1 && IsEqual(arguments[0][0] , "DIR"))
+    {
+       Dir();
+    }
+    else if(args_count == 1 && IsEqual(arguments[0][0],"COPY"))
+    {
+        if(arguments[0][1] != NULL && arguments[0][2] != NULL && arguments[0][3] == NULL )
+        {
+             Copy();
+        }
+        else
+        {
+            printf("Usage")
+        }
+       
+    }   
+
     int pd[2];
 
     int iterator = 0;
@@ -82,7 +109,8 @@ void ExecuteCommandS(char *arguments[1000][1000]) {
 
     int f_in = 0;
 
-while(iterator <= args_count) {//go through and execute all the commands
+    while(iterator <= args_count)
+    {//go through and execute all the commands
 
       pid_t pid;
 
