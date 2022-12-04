@@ -160,7 +160,7 @@ void ExecuteCommandS(char *arguments[1000][1000]) {
 
           close(fd[READ]);
 
-              exit(execve(arguments[iterator][0], arguments[iterator]));
+              exit(execve(arguments[iterator][0], arguments[iterator],NULL));
 
             
         }
