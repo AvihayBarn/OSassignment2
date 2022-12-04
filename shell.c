@@ -250,7 +250,7 @@ int main()
          }
 
          args[args_count][count] = NULL;
-    for(int i=0 ; i<args_count ; i++)
+    for(int i=0 ; i<=args_count ; i++)
     {
         
         int j=0;
