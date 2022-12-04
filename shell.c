@@ -240,13 +240,14 @@ int main()
                         }
                         strcat(complicated_arg," ");
                         strcat(complicated_arg,pipe_finder);
-                        
+                        args[args_count][count] = complicated_arg;
                     }
                     else
                     {
-                        complicated_arg = pipe_finder;
+                        args[args_count][count] = pipe_finder;
                     }
-                    args[args_count][count] = complicated_arg;
+                    }
+                    
                 }
 
                 else
