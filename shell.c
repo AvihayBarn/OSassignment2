@@ -246,9 +246,9 @@ int main()
                     {
                         args[args_count][count] = pipe_finder;
                     }
-                    }
-                    
                 }
+                    
+                
 
                 else
                 {
@@ -261,6 +261,7 @@ int main()
                  pipe_finder = strtok(NULL, " \n\t");
 
              } 
+            
 
              else
               {
