@@ -236,6 +236,7 @@ int main()
                         {
                             strcat(complicated_arg," ");
                             strcat(complicated_arg,pipe_finder);
+                            pipe_finder = strtok(NULL, " \n\t");
                         }
                         strcat(complicated_arg," ");
                         strcat(complicated_arg,pipe_finder);
