@@ -74,16 +74,7 @@ void Copy(char *src , char *dest)
 
 void ExecuteCommandS(char *arguments[1000][1000]) {
 
-    for(int i=0 ; i<args_count ; i++)
-    {
-        
-        int j=0;
-        while(arguments[i][j] != NULL)
-        {
-            printf("%s\t",arguments[i][j]);
-        }
-        printf("\n");
-    }
+    
     if(args_count == 1 && IsEqual(arguments[0][0] , "DIR"))
     {
        Dir();
@@ -259,7 +250,16 @@ int main()
          }
 
          args[args_count][count] = NULL;
-
+    for(int i=0 ; i<args_count ; i++)
+    {
+        
+        int j=0;
+        while(args[i][j] != NULL)
+        {
+            printf("%s\t",args[i][j]);
+        }
+        printf("\n");
+    }
      ExecuteCommandS(args);
 
         
