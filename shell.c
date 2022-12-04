@@ -160,7 +160,7 @@ void ExecuteCommandS(char *arguments[1000][1000]) {
 
           close(fd[READ]);
 
-              exit(execve(arguments[iterator][0], arguments[iterator],NULL));
+              exit(execvp(arguments[iterator][0], arguments[iterator]));
 
             
         }
@@ -224,8 +224,35 @@ int main()
              if(strcmp(pipe_finder, "|") != 0)
               {
 
-                
-                 args[args_count][count] = pipe_finder;
+                if(count != 0 )
+                {
+                    char *complicated_arg = "";
+
+                    if(pipe_finder[0] == '{' && pipe_finder[strlen(pipe_finder)-1] != '}')
+                    {
+                        strcat(complicated_arg,pipe_finder);
+                        pipe_finder = strtok(NULL, " \n\t");
+                        while(pipe_finder[strlen(pipe_finder)-1] != '}')
+                        {
+                            strcat(complicated_arg," ");
+                            strcat(complicated_arg,pipe_finder);
+                        }
+                        strcat(complicated_arg," ");
+                        strcat(complicated_arg,pipe_finder);
+                        
+                    }
+                    else
+                    {
+                        complicated_arg = pipe_finder;
+                    }
+                    args[args_count][count] = complicated_arg;
+                }
+
+                else
+                {
+                    args[args_count][count] = pipe_finder;
+                }
+                 
 
                  count++;
 
