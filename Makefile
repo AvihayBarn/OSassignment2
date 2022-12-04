@@ -1,7 +1,7 @@
 CC=gcc
 FLAGS=-WALL -g
 
-all: shell
+all: shell mytee mync
 
 shell: shell.c
 	$(CC) -o shell shell.c
