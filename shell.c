@@ -257,10 +257,11 @@ int main()
         while(args[i][j] != NULL)
         {
             printf("%s\t",args[i][j]);
+            j++;
         }
 
         printf("\n");
-        j++;
+        
     }
      ExecuteCommandS(args);
 
