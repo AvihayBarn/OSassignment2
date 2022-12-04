@@ -160,7 +160,7 @@ void ExecuteCommandS(char *arguments[1000][1000]) {
 
           close(fd[READ]);
 
-              exit(execvp(arguments[iterator][0], arguments[iterator]));
+              exit(execve(arguments[iterator][0], arguments[iterator]));
 
             
         }
@@ -224,7 +224,7 @@ int main()
              if(strcmp(pipe_finder, "|") != 0)
               {
 
-
+                
                  args[args_count][count] = pipe_finder;
 
                  count++;
