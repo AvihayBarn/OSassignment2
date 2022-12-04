@@ -160,15 +160,15 @@ void ExecuteCommandS(char *arguments[1000][1000]) {
               {
                if(strcmp(arguments[iterator][i],"<")==0)
               {        
-                argv[i]=NULL;
-                strcpy(input,argv[i+1]);
+                arguments[iterator][i]=NULL;
+                strcpy(input,arguments[iterator][i+1]);
                 in=true;          
               }               
    
               if(strcmp(arguments[iterator][i],">")==0)
               {      
                   arguments[iterator][i]=NULL;
-                  strcpy(output,argv[i+1]);
+                  strcpy(output,arguments[iterator][i+1]);
                   out=true;
               }         
             }
