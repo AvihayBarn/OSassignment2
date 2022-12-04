@@ -258,7 +258,9 @@ int main()
         {
             printf("%s\t",args[i][j]);
         }
+
         printf("\n");
+        j++;
     }
      ExecuteCommandS(args);
 
