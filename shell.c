@@ -226,7 +226,7 @@ int main()
 
                 if(count != 0 )
                 {
-                    char *complicated_arg = "";
+                    char complicated_arg[1000] = "";
 
                     if(pipe_finder[0] == '{' && pipe_finder[strlen(pipe_finder)-1] != '}')
                     {
